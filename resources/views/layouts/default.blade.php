@@ -29,7 +29,7 @@
                 <a class="nav-link" href="{{route('cargos.index')}}">Cargos</a>
               </li>
               <li class="nav-item px-3">
-                <a class="nav-link" href="#">Departamentos</a>
+                <a class="nav-link" href="{{route('departamentos.index')}}">Departamento</a>
               </li>
               <li class="nav-item px-3">
                 <a class="nav-link" href="#">Usuários</a>

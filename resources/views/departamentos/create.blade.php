@@ -1,10 +1,10 @@
 @extends('layouts.default')
 
-@section('title', 'Cadastrar Cargos')
+@section('title', 'Cadastrar Departamento')
 
 @section('conteudo')
     <div class="container-fluid shadow bg-white p-4">
-        <h1>Cadastrar Cargo</h1>
+        <h1>Cadastrar Departamento</h1>
         <div class="mt-5">
             <div>
                 <label for="nome" class="form-label">Descrição</label>

@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\FuncionarioController;
 use App\Http\Controllers\CargoController;
+use App\Http\Controllers\DepartamentoController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -27,3 +28,6 @@ Route::get('/cargos/create', [CargoController::class, 'create'])->name('cargos.c
 
 Route::get('/cargos', [CargoController::class, 'index'])->name('cargos.index');
 
+Route::get('/departamentos', [DepartamentoController::class, 'index'])->name('departamentos.index');
+
+Route::get('/departamentos/create', [DepartamentoController::class, 'create'])->name('departamentos.create');
