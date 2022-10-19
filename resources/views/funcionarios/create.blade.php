@@ -15,17 +15,17 @@
             <div class="col">
                 <div>
                     <label for="nome" class="form-label">Data de Nascimento</label>
-                    <input type="date" name="datanasc" class="form-control form-control-lg bg-light" value=""
+                    <input type="date" name="data_nasc" class="form-control form-control-lg bg-light" value=""
                         required>
                 </div>
             </div>
             <div class="col">
                 <div>
                     <label for="sexo" class="form-label fw-bold">Sexo</label>
-                    <select name="sexo" id="sexo" class="form-select form-select-lg bg-light" required>
+                    <select name="sexo" class="form-select form-select-lg bg-light" required>
                         <option value="">--</option>
-                        <option value="M">Masculino</option>
-                        <option value="F">Feminino</option>
+                        <option value="m">Masculino</option>
+                        <option value="f">Feminino</option>
                     </select>
                 </div>
             </div>
@@ -59,14 +59,14 @@
             <div class="col">
                 <div>
                     <label for="cpf" class="form-label">Departamento</label>
-                    <input type="text" name="departamento" class="form-select form-select-lg bg-light" value=""
+                    <input type="text" name="id_departamento" class="form-select form-select-lg bg-light" value=""
                         required>
                 </div>
             </div>
             <div class="col">
                 <div>
                     <label for="nome" class="form-label">Cargo</label>
-                    <input type="text" name="cargo" class="form-select form-select-lg bg-light" value=""
+                    <input type="text" name="id_cargo" class="form-select form-select-lg bg-light" value=""
                         required>
                 </div>
             </div>
@@ -81,7 +81,7 @@
 
         <div class="mb-3">
             <label for="formFile" class="form-label">Foto</label>
-            <input class="form-control" type="file" id="formFile">
+            <input name="foto" class="form-control" type="file" id="formFile">
         </div>
         <div>
             <button type="button" class="btn btn-primary">Cadastrar</button>

@@ -10,7 +10,7 @@
                 class="bi bi-person-plus-fill"></i></a>
         <table class="table table-striped">
             <thead class="table-dark">
-                <tr>
+                <tr class="text-center">
                     <th>ID</th>
                     <th>Descrição</th>
                     <th>Ação</th>

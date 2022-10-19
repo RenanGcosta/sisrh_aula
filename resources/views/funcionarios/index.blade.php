@@ -7,6 +7,7 @@
     <a href="{{ route('funcionarios.create') }}" class="btn btn-primary float-end mb-2 
     rounded-circle fs-4"><i
             class="bi bi-person-plus-fill"></i></a>
+    <div class="table-responsive">
     <table class="table table-striped">
         <thead class="table-dark">
             <tr class="text-center">
@@ -33,4 +34,5 @@
             @endforeach
         </tbody>
     </table>
+    </div>
 @endsection
