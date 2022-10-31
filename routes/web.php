@@ -24,6 +24,12 @@ Route::get('/funcionarios', [FuncionarioController::class, 'index'])->name('func
 
 Route::get('/funcionarios/create', [FuncionarioController::class, 'create'])->name('funcionarios.create');
 
+
+
+Route::post('/funcionarios', [FuncionarioController::class, 'store'])->name('funcionarios.store');
+
+
+
 Route::get('/cargos/create', [CargoController::class, 'create'])->name('cargos.create');
 
 Route::get('/cargos', [CargoController::class, 'index'])->name('cargos.index');
