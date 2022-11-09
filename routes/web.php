@@ -24,16 +24,16 @@ Route::get('/funcionarios', [FuncionarioController::class, 'index'])->name('func
 
 Route::get('/funcionarios/create', [FuncionarioController::class, 'create'])->name('funcionarios.create');
 
-
-
 Route::post('/funcionarios', [FuncionarioController::class, 'store'])->name('funcionarios.store');
-
-
 
 Route::get('/cargos/create', [CargoController::class, 'create'])->name('cargos.create');
 
 Route::get('/cargos', [CargoController::class, 'index'])->name('cargos.index');
 
+Route::post('/cargos', [CargoController::class, 'store'])->name('cargos.store'); //stored
+
 Route::get('/departamentos', [DepartamentoController::class, 'index'])->name('departamentos.index');
 
 Route::get('/departamentos/create', [DepartamentoController::class, 'create'])->name('departamentos.create');
+
+Route::post('/departamentos', [CargoController::class, 'store'])->name('departamentos.store'); //stored
