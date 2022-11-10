@@ -12,7 +12,7 @@
             <input type="text" name="buscaCargo" class="form-control form-control-lg" placeholder="Descrição do Cargo">
             <button class="btn btn-primary" type="submit">Procurar</button>
         </div>
-        <a href="" class="btn btn-white border btn-lg">Limpar</a>
+        <a href="{{ route('cargos.index') }}" class="btn btn-white border btn-lg">Limpar</a>
     </form>
     <table class="table table-striped">
         <thead class="table-dark">

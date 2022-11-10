@@ -13,7 +13,7 @@
                     placeholder="Nome do Departamento">
                 <button class="btn btn-primary" type="submit">Procurar</button>
             </div>
-            <a href="" class="btn btn-white border btn-lg">Limpar</a>
+            <a href="{{ route('departamentos.index') }}" class="btn btn-white border btn-lg">Limpar</a>
         </form>
 
         <table class="table table-striped">

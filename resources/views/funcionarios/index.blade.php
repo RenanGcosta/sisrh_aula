@@ -4,8 +4,14 @@
 
 @section('conteudo')
     <h1>Funcionários</h1>
+
+    @if (Session::get('sucesso'))
+    <div class="alert alert-success text-center">{{ Session::get("sucesso") }}</div>
+    @endif
+
     <a href="{{ route('funcionarios.create') }}"
-        class="btn btn-primary position-absolute top-0 end-0 m-4 rounded-circle fs-4"><i class="bi bi-person-plus-fill"></i></a>
+        class="btn btn-primary position-absolute top-0 end-0 m-4 rounded-circle fs-4"><i
+            class="bi bi-person-plus-fill"></i></a>
     <p>Total de Funcionários: {{ $totalFuncionarios }}</p>
     <form action="" method="get" class="mb-3 d-flex justify-content-end">
         <div class="input-group me-3">
@@ -31,19 +37,29 @@
             <tbody>
                 @foreach ($funcionarios as $funcionario)
                     <tr class="text-center">
-                        <td class="align-middle">{{ $funcionario->id }}</>
-                        <td class="align-middle"><img src="/images/funcionarios/{{ $funcionario->foto }}"
-                                alt="{{ $funcionario->nome }}" width="100"></td>
-                        <td class="align-middle">{{ $funcionario->nome }}</>
-                        <td class="align-middle">{{ $funcionario->cargo->descricao }}</>
-                        <td class="align-middle">{{ $funcionario->departamento->nome }}</>
-                        <td class="align-middle"><button type="button" class="btn btn-primary m-2"><i
-                                    class="bi bi-pen"></i>
-                            </button><button type="button" class="btn btn-danger"><i class="bi bi-trash"></i></button></i>
+                        <td class="align-middle">{{ $funcionario->id }}</td>
+                        <td class="align-middle"><img src="/storage/funcionarios/{{ $funcionario->foto }}"alt="{{ $funcionario->nome }}" width="100"></td>
+                        <td class="align-middle">{{ $funcionario->nome }}</td>
+                        <td class="align-middle">{{ $funcionario->cargo->descricao }}</td>
+                        <td class="align-middle">{{ $funcionario->departamento->nome }}</td>
+                        <td class="align-middle text-center">
+                            <a href="{{ route('funcionarios.edit', $funcionario->id) }}" class="btn btn-primary m-2" title="Editar"><i class="bi bi-pen"></i></a>
+
+                            <a href="" class="btn btn-danger" title="Excluir" data-bs-toggle="modal" data-bs-target="#modal-deletar-{{ $funcionario->id }}"><i class="bi bi-trash"></i></a>
+                            @include('funcionarios.delete')
                         </td>
                     </tr>
                 @endforeach
             </tbody>
         </table>
+
+        <div>
+            <style>
+                .pagination {
+                    justify-content: center;
+                }
+            </style>
+            {{ $funcionarios->links() }}
+        </div>
     </div>
 @endsection
