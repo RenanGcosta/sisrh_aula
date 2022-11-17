@@ -23,17 +23,21 @@
             <div class="collapse navbar-collapse" id="navbarNav">
                 <ul class="navbar-nav">
                     <li class="nav-item px-3">
-                        <a class="nav-link" href="/">Home</a>
+                        <a class="nav-link" href="{{ route('dashboard.index') }}">Home</a>
                     </li>
                     <li class="nav-item px-3 dropdown">
-                        <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown">Funcionários</a>
+                        <a class="nav-link dropdown-toggle" href="#" role="button"
+                            data-bs-toggle="dropdown">Funcionários</a>
                         <ul class="dropdown-menu">
-                            <li><a class="dropdown-item" href="{{ route('funcionarios.create') }}">Cadastrar novo</a></li>
-                            <li><a class="dropdown-item" href="{{ route('funcionarios.index') }}">Listar todos</a></li>  
-                            <li><hr class="dropdown-divider"></li>
-                            
+                            <li><a class="dropdown-item" href="{{ route('funcionarios.create') }}">Cadastrar novo</a>
+                            </li>
+                            <li><a class="dropdown-item" href="{{ route('funcionarios.index') }}">Listar todos</a></li>
+                            <li>
+                                <hr class="dropdown-divider">
+                            </li>
+
                             @foreach ($departamentos as $departamento)
-                            <li><a class="dropdown-item" href="">{{ $departamento->nome }}</a></li>
+                                <li><a class="dropdown-item" href="">{{ $departamento->nome }}</a></li>
                             @endforeach
 
                             <li><a class="dropdown-item" href=""></a></li>
@@ -45,10 +49,18 @@
                     <li class="nav-item px-3">
                         <a class="nav-link" href="{{ route('departamentos.index') }}">Departamento</a>
                     </li>
-                    <li class="nav-item px-3">
-                        <a class="nav-link" href="#">Usuários</a>
-                    </li>
-                </ul>
+                    @can('acessar-usuarios')
+                        <li class="nav-item px-3">
+                            <a class="nav-link" href="{{ route('usuarios.index') }}">Usuários</a>
+                        </li>
+                    @endcan
+                    <li class="nav-item px-3 dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown">Olá
+                            {{ auth()->user()->name }}</a>
+                        <ul class="dropdown-menu">
+                            <li><a class="dropdown-item" href="">Alterar Dados</a></li>
+                            <li><a class="dropdown-item" href="{{ route('login.logout') }}">Sair</a></li>
+                        </ul>
             </div>
         </div>
     </nav>

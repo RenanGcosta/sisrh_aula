@@ -10,6 +10,12 @@ use Illuminate\Support\Facades\Storage;
 
 class FuncionarioController extends Controller
 {   //pasta da view
+
+    public function __construct() 
+    {
+        $this->middleware('auth');
+    }
+
     public function index(Request $request)
     {
         $funcionarios = Funcionario::where('nome', 'like', '%' .

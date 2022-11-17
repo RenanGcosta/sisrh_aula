@@ -7,6 +7,12 @@ use Illuminate\Http\Request;
 
 class DepartamentoController extends Controller
 {
+
+    public function __construct() 
+    {
+        $this->middleware('auth');
+    }
+    
     public function index(Request $request)
     {
         $departamentos = Departamento::where('nome','like', '%'.$request->buscaDepartamento.'%')->orderBy('nome','asc')->get();;
